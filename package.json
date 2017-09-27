@@ -1,0 +1,21 @@
+{
+  "name": "fuzzy-logic",
+  "version": "1.0.0",
+  "description": "Fuzzy implemntation",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fuzzyball"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.6.6",
+    "bootstrap": "^3.0",
+    "angularjs-gauge": "*",
+    "fuzzball": "*",
+    "jquery": "^3.2.1"
+  }
+}

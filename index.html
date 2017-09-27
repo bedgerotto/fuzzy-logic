@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Controladores Fuzzy</title>
+    </head>
+    <body>
+        <div ng-app="fuzzy" ng-controller="MainCtrl">
+            <div class="col-md-12">
+                <h1>Comparação de texto com lógica Convencional e Lógica FUZZY</h1>
+                <div class="col-md-5">
+                    <label for="texto1">Texto 1</label>
+                    <textarea type="text" class="form-control" ng-model="texto1" id="texto1"></textarea>
+                </div>
+                <div class="col-md-5">
+                    <label for="texto2">Texto 2</label>
+                    <textarea type="text" class="form-control" ng-model="texto2" id="texto2"></textarea>
+                </div>
+                <div class="col-md-2">
+                    <label class="switch">
+                        <input type="checkbox" ng-click="changeLogic()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4" ng-if="logic">
+                <ng-gauge size="300" type="arch" thick="5" min="0" max="100" value="ratio" cap="round" label="Taxa de Compatibilidade"  foreground-color="#66AFE9" background-color="rgba(255,255,255, 0.4)" duration="500" append="%"></ng-gauge>
+            </div>
+            <div class="col-md-4" ng-if="!logic">
+                <h1>Os textos são iguais?</h1>
+                <h2 class="true" ng-if="texto1 == texto2">Sim</h2>
+                <h2 class="false" ng-if="texto1 !== texto2">Não</h2>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script charset="UTF-8" src="node_modules/fuzzball/dist/fuzzball.umd.min.js"></script>
+        <script charset="UTF-8" src="node_modules/angular/angular.js"></script>
+        <script charset="UTF-8" src="node_modules/angularjs-gauge/dist/angularjs-gauge.js"></script>
+        <script charset="UTF-8" src="js/main.js"></script>
+    </body>
+</html>
